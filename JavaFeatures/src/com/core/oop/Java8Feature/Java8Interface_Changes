@@ -1,0 +1,59 @@
+Java8 Inteface Changes:
+1. Static Method:
+Static methods in interfaces are useful for defining utility functions related to the 
+interface that do not depend on instance-specific data. Unlike default methods, which 
+provide a default implementation for methods that can be overridden by implementing classes, 
+static methods in interfaces are not inherited by implementing classes.
+
+Key Characteristics of Static Methods in Interfaces
+Class-Level Scope: Static methods in an interface are called using the interface name, 
+not through an instance of a class that implements the interface.
+
+No Inheritance: Static methods in interfaces are not inherited by implementing classes. 
+They must be called using the interface name.
+
+Purpose: Static methods in interfaces are typically used for utility functions related 
+to the interface or for providing default implementations of some common functionality.
+
+*******************************************
+2. default method:
+This feature enables you to add new methods to interfaces while maintaining backward compatibility 
+with existing implementations. Default methods help to avoid the issue of "interface evolution," 
+where adding new methods to an interface would otherwise require updating all implementing classes.
+
+Key Points About Default Methods
+Syntax: Default methods are defined in interfaces using the default keyword. They provide a method 
+body within the interface itself.
+
+Purpose: Default methods allow you to add new functionality to interfaces without breaking existing
+ implementations. This is particularly useful in large codebases or libraries.
+
+Overriding: Classes that implement the interface can override the default method if they need a 
+specific implementation.
+
+Multiple Inheritance: If a class implements multiple interfaces that contain default methods 
+with the same signature, the class must override the method to resolve the ambiguity.
+
+
+#####################################
+Static Methods:
+
+Belong to the interface itself.
+Must be called using the interface name.
+Not inherited by implementing classes.
+
+
+Default Methods:
+
+Provide default behavior that can be inherited by implementing classes.
+Can be overridden by implementing classes.
+Can access instance members of the class implementing the interface.
+
+***************************
+
+##why do we need static methods in interface?
+
+1. Interface static method helps us in providing security by not allowing
+ implementation classes to override them.
+ 2. interface static methods are good for providing utility methods,
+ for example:null checking i.e. whose definition will never change.
