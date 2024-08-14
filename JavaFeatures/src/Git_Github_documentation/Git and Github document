@@ -1,0 +1,119 @@
+Git is a free and open source distributed version control system designed to handle 
+everything from small to very large projects with speed and efficiency.
+Git is Local repository and Github is Remote repository
+
+Git is a distributed version control system used to track changes in source code during 
+software development. It allows multiple developers to collaborate on a project by managing 
+and merging changes efficiently.Git operates locally on your machine. You can work offline, 
+commit changes, and create branches without needing an internet connection.
+
+GitHub is a cloud-based platform that provides hosting for Git repositories. It offers a web 
+interface for Git repositories and adds collaboration features on top of Git's capabilities.
+GitHub integrates with various CI/CD tools, project management applications, and other 
+third-party services.
+
+
+
+Installation:
+1. install git from here:https://git-scm.com/downloads
+2. create github account from here:https://github.com/
+3.create folder in local c:/git/admin/sourcefolder/keep some files inside it.
+4. create repository in github as:sourcecode  copy the repository path
+
+Generating a new SSH key and adding it to the ssh-agent using git bash
+
+ open git bash in admin folder.
+Step1 :
+ssh-keygen -t rsa -b 4096 -C (gmail id)
+
+Then u will press enter and at default location shown there: (/c/Users/XXX/.ssh/id_rsa) 
+
+Adding SSH key to ssh agent:
+
+start the ssh-agent in the background
+ $ eval $(ssh-agent -s)
+ 
+ Now add it to agent
+
+ssh-add ~/.ssh/id_rsa
+
+copy that rsa key to your notepad and switch to github and add ssh key to github  account.
+
+Goto github settings and open ssh key tab: click new ssh key and add key from this file:(c/Users/XXX/.ssh/id_rsa)
+
+
+Add files to github:
+
+open git bash in this folder:c:/git/admin/sourcefolder(file system earlier)
+ 
+ $ git init 
+With this command we will initialise local directory as git repository. Till now our code  is in working area(working area)
+
+$ git add .    -- with dot
+Adds the files in the local repository and stages them for commit. These files are prepared to be commited. 
+So now files are moved from working area to staging area(stage area/tracked files)
+(Local repository)
+
+$ git status 
+to see ur files. In staged, unstaged or untracked status. After commiting u will not see the file here.
+
+$ git commit -m "First commit" 
+Commits your tracked changes on your local repository and prepares them to be pushed to a remote repository. 
+So now files moves from stage to local repo.
+
+git remote add origin git@github.com:Code-decode-learning/git-demo.git 
+ add url for remote repository in which your local repo will be pushed . (origin)
+
+git remote -v
+ Verify new remote url.
+
+$ git push –u origin master 
+ Pushes the changes in your local repository up to the remote repository you specified as the origin(Remote repository)
+ 
+Git and github tutorial for beginners that we cover here uses concept of forking created at github.
+git commands will be same for forked one and for organisational level repositories. 
+
+For forked repos :
+ 
+ Go to your .config file in .git and check upstream and origin.
+
+Upstream should be from where u can take pull. Means your main repo of organisation.
+
+Origin must be your forked where you will push your code and raise a pull request so that on approval those changes can be merged to upstream branch or organisation.
+
+
+git remote add upstream (url).
+
+git remote add origin(url).
+
+We have already seen: 
+Git init [repo name] : This command is used to start a new repository.
+Git clone : used to obtain a repository from an existing URL into local repository.
+Now:
+
+Git add [file]   - This command adds a file to the staging area.
+Git add .(dot) -    This command adds one or more to the staging area.
+
+git diff:  Show unstaged changes between your index and working directory.
+
+git commit -m “[ Type in the commit message]”
+Usage : git commit –am “my message” 
+
+git status : List which files are staged, unstaged, and untracked.
+
+Git log : Display the entire commit history using the default format. For customization see additional options.
+
+
+git push origin $branchname:$remote_branchname
+like --- git push origin master
+
+Git pull -) this command will pull changes from default remote repository which is origin n not upstream, if wanna pull from upstream then use command git pull upstream master.
+
+
+git fetch: fetches the changes from remote repository but will not affect your local so will not give u any merge confict,
+The interesting thing about the fetch command is that it doesn't actually affect anything in your local repo. No working changes will be lost, and you'll see no direct affect on your local branches. This is because Git keeps fetched content separate from your own repo's content until it is merged in.
+
+git fetch (remote-repo) 
+$ git merge FETCH_HEAD
+
+So obviously the big difference between fetch and pull is that pull actually performs a fetch in addition to a merge.

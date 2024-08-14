@@ -1,0 +1,164 @@
+Collection Framework (Java):
+
+1. Core Interfaces
+#########################
+Collection Interface: The root interface.
+.....................
+Collection Interface:
+
+The root interface of the collection hierarchy. It represents a group of objects known as elements.
+
+1. List Interface: Ordered collections (e.g., ArrayList, LinkedList).
+....................
+
+List Interface:
+
+An ordered collection that allows duplicate elements. Elements can be accessed by 
+their position (index).
+
+Implementations:
+ArrayList: Resizable array implementation.(Dynamic resizing -50% of original size,Non synchronized)
+LinkedList: Doubly linked list implementation.(implements list and deque interface, maintains the insertion order,non synchronized,
+does not support accessing element randomly,can use Listiterator to iterate list elements.
+Vector: Synchronized resizable array (legacy).,thread safe vector increases its size by doubling array size(maintains the insertion order)
+Stack: Represents a stack data structure (legacy).(LIFO,the elements are added as well as removed from rear end.
+
+
+2. Set Interface: Unordered collections with unique elements (e.g., HashSet, TreeSet).
+....................................
+Set Interface:
+
+A collection that does not allow duplicate elements. It models the mathematical set abstraction.
+Implementations:
+HashSet: Backed by a hash table; does not guarantee any order.(it implicitly implements a hashtable ,contains only unique elements,only one null element can be added.its unoredered as a set.
+LinkedHashSet: Maintains insertion order using a linked list.(ordered version of hashset which maintains a doubly-linkedlist across all elements.it preserves a insertion order.
+SortedSet(I):All the elements of sortedset interface implement the comparable interface. It's set sorted in an ascending order.
+TreeSet: Implements a NavigableSet and is sorted according to natural ordering or a provided comparator.(uses a Tree for storage[self balancing binary search tree like red-black tree],
+Objects in a Treeset are stored in a sorted and ascending order.
+
+
+
+3. Queue Interface: Collections used for holding elements prior to processing (e.g., LinkedList, PriorityQueue).
+...............................
+Queue Interface:
+
+A collection used to hold elements before processing. It typically follows a FIFO (first-in, first-out) order.
+
+Implementations:
+PriorityQueue: Elements are ordered based on their natural ordering or a comparator.(priority queue is a queue with priority associated with each element.,high priority element is served before a low priority element irrespective of their insertion order.
+LinkedList: Can be used as a queue with FIFO behavior.
+ArrayDeque: Resizable array implementation of the Deque interface.
+
+
+4. Deque Interface: Double-ended queues (e.g., ArrayDeque).
+...................
+Deque Interface:
+
+A double-ended queue that supports element insertion and removal from both ends.
+Implementations:
+ArrayDeque: A resizable array implementation.(no capacity restriction)
+LinkedList: Can also be used as a deque.
+
+
+...................
+Map Interface:
+
+Represents a collection of key-value pairs. Each key maps to exactly one value.
+Implementations:
+HashMap: Backed by a hash table; does not guarantee any order.(non-synchronized, allows only one null key but multiple null values)
+LinkedHashMap: Maintains insertion order using a linked list.
+Sorted Map:entries are maintained in an ascending key order.
+TreeMap: Implements a NavigableMap and is sorted according to natural ordering or a provided comparator.
+(implicitly implements the red-black tree implementation, can't store any null key)
+Hashtable: Legacy implementation; synchronized.(Doesn't allowed any null key or value)
+
+2. Abstract Classes
+###########################################
+AbstractCollection:
+
+Provides a skeletal implementation of the Collection interface to minimize the effort required to implement this interface.
+AbstractList:
+
+Provides a skeletal implementation of the List interface with a partially implemented list.
+AbstractSet:
+
+Provides a skeletal implementation of the Set interface.
+AbstractQueue:
+
+Provides a skeletal implementation of the Queue interface.
+AbstractMap:
+
+Provides a skeletal implementation of the Map interface.
+
+3. Utility Classes
+###################################################
+Collections:
+
+A utility class that consists of static methods for operating on collections, such as sorting and searching.
+Collection:
+
+Provides utility methods for creating immutable collections.
+
+4. Key Characteristics and Features
+############################################
+
+Generics:
+
+The collection framework uses generics to ensure type safety and eliminate the need for type casting.
+Iteration:
+
+Collections can be traversed using iterators, which provides a standard way to access elements in a collection.
+Concurrency:
+
+Some implementations of collections are thread-safe or provide ways to create synchronized collections using methods from the Collections utility class.
+Sorting:
+
+The Collections utility class provides methods to sort lists, and some implementations like TreeSet and TreeMap maintain a sorted order automatically.
+
+
+.............................
+Collection
+   |
+   +-- List
+   |    +-- ArrayList
+   |    +-- LinkedList
+   |    +-- Vector
+   |    +-- Stack
+   |
+   +-- Set
+   |    +-- HashSet
+   |    +-- LinkedHashSet
+   |--Sortedset(I)+-- TreeSet
+   |
+   +-- Queue
+   |    +-- PriorityQueue
+   |    +-- LinkedList (also implements Deque)
+   |    +-- ArrayDeque
+   |
+   +-- Deque
+        +-- ArrayDeque
+        +-- LinkedList
+        
+        
+        
+Map(I)
+|
++--HashMap(c)
+|
+|
++--HashTable(c)
+|
+|
++SortedMap(I)
+    |
+    |
+    +---Tree Map(c)
+
+        
+        The Map interface is separate from Collection and does not inherit from it but is a part of the framework for managing key-value pairs. 
+        It contains unique key and duplicate value.
+        
+        
+......................................
+Difference between fail-fast and fail-safe iteratores?
+
