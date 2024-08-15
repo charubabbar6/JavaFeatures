@@ -1,0 +1,25 @@
+Structural Patterns
+Structural design patterns are a category of design patterns that focus on how objects and
+ classes are composed to form larger structures. They help ensure that if one part of a 
+ system changes, the entire system doesn't need to do the same.
+These patterns deal with object composition and typically help ensure that if one part of a
+ system changes, the entire system doesn’t need to do the same.
+
+Adapter: Allows an interface to be compatible with another interface.
+
+Example: A power adapter that allows a device to plug into a different type of outlet.
+Decorator: Adds responsibilities to objects dynamically and provides an alternative to subclassing for extending functionality.
+
+Example: Adding scroll bars to a window component.
+Facade: Provides a simplified interface to a complex subsystem.
+
+Example: A unified interface to a set of complex APIs (e.g., a library for managing different types of file systems).
+Bridge: Separates an abstraction from its implementation so that the two can vary independently.
+
+Example: Separating the abstraction of a shape (e.g., circle, square) from its drawing implementation.
+Composite: Allows individual objects and compositions of objects to be treated uniformly.
+
+Example: A graphical drawing application where both individual shapes and groups of shapes are treated uniformly.
+Flyweight: Reduces the cost of creating and managing a large number of similar objects by sharing common parts.
+
+Example: Text rendering where the font objects are shared.

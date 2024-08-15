@@ -1,0 +1,39 @@
+Behavioral Patterns
+
+Behavioral patterns in software design are design patterns that focus on communication between objects and how they 
+cooperate to fulfill a specific task.
+These patterns deal with object interactions and responsibilities, defining how objects collaborate.
+
+Chain of Responsibility: Passes a request along a chain of handlers, allowing multiple handlers to process the request.
+
+Example: Event handling systems where multiple listeners can handle an event.
+Command: Encapsulates a request as an object, thereby allowing for parameterization and queuing of requests.
+
+Example: Undo/redo functionality in text editors.
+Interpreter: Defines a grammar for a language and provides an interpreter to interpret sentences of the language.
+
+Example: SQL query interpreters.
+Iterator: Provides a way to access elements of a collection sequentially without exposing its underlying representation.
+
+Example: Iterating through elements of a list or array.
+Mediator: Defines an object that encapsulates how a set of objects interact, promoting loose coupling.
+
+Example: A chat room that facilitates communication between users.
+Memento: Captures and restores an object’s internal state without violating encapsulation.
+
+Example: Saving and restoring the state of a game.
+Observer: Defines a dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+Example: The observer pattern is often used in implementing distributed event handling systems.
+State: Allows an object to alter its behavior when its internal state changes.
+
+Example: A document editor that changes its behavior based on whether it’s in edit mode or view mode.
+Strategy: Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+
+Example: Sorting algorithms where the strategy can be changed at runtime.
+Template Method: Defines the skeleton of an algorithm in a method, deferring some steps to subclasses.
+
+Example: A framework for generating reports where the overall structure is defined but specific content is implemented by subclasses.
+Visitor: Defines a new operation to a class without changing the class itself.
+
+Example: Adding new operations to elements of an object structure without modifying their classes.
