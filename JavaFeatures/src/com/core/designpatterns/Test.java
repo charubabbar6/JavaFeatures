@@ -1,3 +1,4 @@
+package com.core.designpatterns;
 
 public class Test {
 
