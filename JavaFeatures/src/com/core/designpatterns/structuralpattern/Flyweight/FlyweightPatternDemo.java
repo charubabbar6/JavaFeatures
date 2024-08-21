@@ -27,3 +27,6 @@ public class FlyweightPatternDemo {
 //Concrete Flyweight: Implements the Flyweight interface and stores the intrinsic state.
 //Flyweight Factory: Manages the creation and reuse of Flyweight objects.
 //Client: Maintains references to Flyweight objects and stores the extrinsic state.
+
+//client-->calls/creates factory instance-->Factory-->contains Map and logic to createnew object
+//if not in MAP else return if key exists in Map. -->specific object

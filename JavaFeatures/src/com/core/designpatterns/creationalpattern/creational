@@ -1,6 +1,8 @@
 Creational Patterns
 These patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation.
 
+e.g. Employee emp=new Employee();
+
 Singleton: Ensures that a class has only one instance and provides a global point of access to it.
 
 Example: Database connections.

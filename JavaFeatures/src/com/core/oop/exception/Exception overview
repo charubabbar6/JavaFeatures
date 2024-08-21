@@ -1,0 +1,122 @@
+Types of Exceptions:
+
+Checked Exceptions: These are exceptions that are checked at compile time. The compiler requires that these exceptions be either handled using a try-catch block or declared in the method's throws clause. Examples include IOException, SQLException, etc.
+Unchecked Exceptions: These exceptions are not checked at compile time. They are usually the result of programming errors, such as logic mistakes or improper use of an API. Examples include NullPointerException, ArrayIndexOutOfBoundsException, etc.
+Errors: Errors are serious problems that a program should not try to handle. These are typically external to the application and are not recoverable, such as OutOfMemoryError.
+
+Difference between Exception and Error?
+1. We can recover from exception using try catch block or using throw. on the other hand,Recovering from Error is not possible.
+2. compiler will have knowledge about checked Exceptions hence compiler will force you to use try-catch blocks onthe other hand,compiler will not have any knowlede about unchecked exceptions and errors.
+3. Exceptions are related to application  on the other hand, errors are related to enviornment where application is running.
+4. Exceptions include both checked as well as unchecked type. on the other hand all errors in java are unchecked type.
+5.Exceptions in java are of type java.lang.Exception on the other hand, errors in java are of type java.lang.error
+
+Difference b/w throw and throws:
+1. java throw keyword is used to explicitly throw an exception. on the other hand,Java throws keyword is used to declare an exception.
+2. checked exception cannot be propagated using throw only. otoh, checked exception can be propagated with throws.
+3. Throw is used within the method. otoh, Throws is used with the method signature.
+4. You can't throw multiple exceptions ,otoh, you can declare multiple exceptions. 
+
+what happens when an exception is thrown by the main methods?
+when exception is thrown by main() method,java runtime terminates the program and prints the exception message and the stack trace in-systems console.
+
+what do you understand by unreachable catch block error?
+This error comes when we keep super classes first and subclasses later.Like if we kept Exception which is parent of Nullpointer first.
+hence, the order of catch blocks must be from more specific to general ones.
+
+what is multi catch block?
+to reduce code duplication and makes it easier to maintain java 7 came up with multi catch block concept
+try{
+//---}catch(NullPointerException | SQLException exp){
+}
+
+difference b/w final,finally and finalize?
+final: it's a keyword is used to apply restrictions on the class,method,variables .
+The final class can't be inherited.
+final method can't be overridden.
+final variable can't be changed.
+finally: is used with try catch block to provide statements that will always be executed even 
+if some exception arises.usually, finally is used to slodr resources.
+
+finalize:is used to perform clean up processing just before the object is garbage collected.
+
+...........................................
+Basic Questions:
+What is an exception?
+
+Explain what an exception is in the context of programming and why it's important.
+What is the difference between checked and unchecked exceptions?
+
+Discuss the distinction between checked (compile-time) and unchecked (runtime) exceptions in Java or other programming languages.
+What is the purpose of the try-catch block?
+
+Describe how the try-catch block is used to handle exceptions and provide a simple example.
+What is the finally block? When is it executed?
+
+Explain the purpose of the finally block and when it gets executed in relation to try and catch blocks.
+What happens if an exception is not caught?
+
+Discuss what occurs if an exception is not handled within the program, including how it propagates up the call stack.
+Intermediate Questions:
+Can you catch multiple exceptions in a single catch block? How?
+
+Explain how you can handle multiple exceptions in a single catch block in Java and provide an example.
+What is exception propagation?
+
+Describe how exceptions are propagated through the call stack and how you can control this behavior.
+What is a throw statement in Java?
+
+Explain how and why the throw statement is used in Java to manually throw an exception.
+What is the difference between throw and throws in Java?
+
+Discuss the difference between the throw keyword and the throws clause in method signatures.
+What is a custom exception? How do you create one?
+
+Describe how to create a custom exception class and when it might be useful to do so.
+Advanced Questions:
+What is the purpose of the try-with-resources statement in Java?
+
+Explain how try-with-resources works and why it is useful, particularly in managing resources like file streams.
+What are some best practices for exception handling?
+
+Discuss best practices for writing clean, maintainable, and effective exception handling code.
+Can a finally block modify the return value of a method?
+
+Explore how a finally block can affect the return value of a method, including any potential pitfalls.
+What is the impact of catching the Exception superclass or Throwable directly?
+
+Discuss the implications of catching the Exception superclass or Throwable in a catch block and why it may not be a good practice.
+How do you log exceptions effectively?
+
+Explain the importance of logging exceptions and best practices for doing so, including the tools or frameworks you might use.
+What are some common pitfalls in exception handling?
+
+Identify and discuss common mistakes in exception handling, such as swallowing exceptions or overusing exceptions for control flow.
+How does exception handling affect performance?
+
+Discuss the performance implications of exception handling and how to write efficient exception-handling code.
+What is the difference between final, finally, and finalize in Java?
+
+Explain the difference between these three keywords/concepts, which are often confused with each other.
+What are suppressed exceptions, and how are they handled in Java?
+
+Describe what suppressed exceptions are in the context of try-with-resources and how they can be accessed.
+What are some alternatives to exception handling?
+
+Explore alternative approaches to dealing with error conditions, such as using result types or error codes, and when these might be appropriate.
+Scenario-Based Questions:
+Design a system that gracefully handles database connectivity issues.
+
+Discuss how you would design exception handling in a system that interacts with a database, including retry logic, logging, and error propagation.
+How would you handle exceptions in a multi-threaded environment?
+
+Explore the challenges of handling exceptions in a multi-threaded application and how you might manage thread-specific exceptions.
+What would you do if you needed to ensure a resource is always closed, even if an exception is thrown?
+
+Explain how you would guarantee that a resource like a file or a database connection is closed properly, even when an exception occurs.
+Describe how you would refactor code with multiple nested try-catch blocks to make it cleaner.
+
+Discuss techniques for refactoring code that has become cluttered with deeply nested exception handling blocks.
+What is the best way to handle exceptions in a RESTful API?
+
+Talk about strategies for handling exceptions in a REST API, including how to return appropriate HTTP status codes and error messages to clients.

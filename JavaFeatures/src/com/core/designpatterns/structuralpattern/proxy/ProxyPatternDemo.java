@@ -9,3 +9,6 @@ public static void main(String[] args) {
     subject.request();
 }
 }
+//client-->calls/creates proxy instance-->proxy-->
+//calls method of real subject only after proper security check and authentications.-->
+//Real subject

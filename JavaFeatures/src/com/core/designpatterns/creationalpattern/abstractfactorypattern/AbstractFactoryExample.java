@@ -29,3 +29,21 @@ public class AbstractFactoryExample {
 	}
 
 }
+//This factory is also called as factory of factories. 
+//Abstract Factory lets a class returns a factory of classes. 
+//So, this is the reason that Abstract Factory Pattern is one level higher than the Factory Pattern.
+
+//An Abstract Factory Pattern is also known as Kit.
+//
+//Steps:
+//1) create main class which call factory of factory class.
+//2) Factory of factory / factory Producer creates instance of factory class.
+//3) Factory class returns required class instance 
+
+
+//Main class--->AbstractFactoryProducer--->AbstractFactory---->ProfessionAbstractFactory---->Profession|---->Engineer
+//														|											 |---->Teacher
+//														|
+//														|--->TraineeAbstractFactory----->Profession----->TrainneEngineer
+//																									|
+//																									|--->TraninneTeacher

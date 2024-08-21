@@ -23,3 +23,36 @@ Example: A graphical drawing application where both individual shapes and groups
 Flyweight: Reduces the cost of creating and managing a large number of similar objects by sharing common parts.
 
 Example: Text rendering where the font objects are shared.
+..........................................................................
+
+What are Proxy Design Patterns?
+It’s a Structural design pattern.
+It lets you provide a substitute or placeholder for another object. 
+A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+
+Roles in Proxy Design Pattern?
+Major roles used in this design patterns are :
+Subject – is an interface that exposes the functionality available to be used by the clients.
+Real Subject – is a class implementing Subject and it is the concrete implementation that needs to be hidden behind a proxy.
+Proxy – hides the real object by extending it and clients communicate to the real object via this proxy object. Usually, frameworks create this proxy object when the client request for the real object.
+
+Advantages of Proxy Design Pattern?
+Access control/protection given by proxy object: This is when you want only specific clients to be able to use the service object.
+Caching request results (caching proxy). This is when you need to cache results of client requests and manage the life cycle of this cache, especially if results are quite large.
+Logging requests (logging proxy). This is when you want to keep a history of requests to the service object.
+
+ What is Flyweight Design Patterns?
+It’s a Structural design pattern.
+A flyweight is a shared object that can be used in multiple contexts simultaneously. The flyweight acts as an independent object in each context.
+
+ Where to use Flyweight DP?
+When your application needs large number of objects that shares most of the common attributes called Intrinsic Attributes or properties and only few unique attributes called as Extrinsic attributes / properties. 
+
+We need to control the memory consumption by large number of objects – by creating fewer objects and sharing them across. 
+
+ When to use Flyweight DP?
+The number of Objects to be created by application should be huge.
+
+The object creation is heavy on memory and it can be time consuming too.
+
+The object properties can be divided into intrinsic and extrinsic properties, extrinsic properties of an Object should be defined by the client program.
